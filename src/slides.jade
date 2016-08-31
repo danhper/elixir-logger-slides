@@ -1,0 +1,94 @@
+section
+  section
+    h1 Daniel Perez
+    h3
+      | CTO@
+      a(href="http://claudetech.com" target="_blank") ClaudeTech
+    h3
+      i.fa.fa-github.fa-margin
+      a(href="https://github.com/tuvistavie" target="_blank") tuvistavie
+    h4
+      a(href="http://tuvistavie.com/slides/elixir-logger" target="_blank") http://tuvistavie.com/slides/elixir-logger
+
+section
+  h2 Today's topic
+  h3 Elixir logger
+  br
+  .fragment(data-fragment-index="2")
+    h4 Target audience
+    ul
+      li Getting started with Elixir
+
+section
+  h2 About Elixir logger
+  ul
+    li Part of Elixir core
+    li Runs as an OTP application
+    li Macro based
+    li Features
+      ul
+        li Log level
+        li Multiple backends support (using <code>GenEvent</code>)
+        li Message formatting
+        li Sync/async mode
+
+section
+  section
+    h2 Macro based
+    pre: code.elixir
+      include ./snippets/logging_macros.exs
+    p We need to <code>require</code> before use
+
+  section
+    h2 Macro based
+    h3 Can purge macros at compile time
+    pre: code.elixir
+      include ./snippets/logging_purge.exs
+
+section
+  section
+    h2 Multiple backends
+    pre: code.elixir
+      include ./snippets/logger_config.exs
+
+  section
+    h2 Multiple backends
+    pre: code.elixir
+      include ./snippets/logger_backend_rt_config.exs
+
+section
+  section
+    h2 Custom backend
+
+    h3.fragment Creating a (very) simple Slack backend
+
+  section
+    h2 GenEvent implementation
+
+    pre: code.elixir
+      include ./snippets/basic_gen_event.exs
+
+  section
+    h2 GenEvent implementation
+
+    pre: code.elixir
+      include ./snippets/gen_event_config.exs
+
+  section
+    h2 Sending to Slack
+
+    pre: code.elixir
+      include ./snippets/send_to_slack.exs
+
+  section
+    h2 Source code
+    a(href="http://bit.ly/ex-slack-logger") http://bit.ly/ex-slack-logger
+
+section
+  h2 Wrapping up
+  ul
+    li Elixir logger is powerful
+    li No runtime penalty with macros
+    li Custom backends are easy to develop
+    li Logging is async by default
+    li.fragment Check the docs for more
